@@ -1,0 +1,19 @@
+{
+  "name": "html-start-theme",
+  "version": "0.0.1",
+  "description": "Webpack html/css start theme f5-studio",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://andrey_suha@bitbucket.org/andrey_suha/html-start-theme.git"
+  },
+  "author": "Andrey Suha",
+  "license": "MIT",
+  "homepage": "https://bitbucket.org/andrey_suha/html-start-theme#readme",
+  "dependencies": {
+    "webpack": "^4.30.0"
+  }
+}
