@@ -1,6 +1,7 @@
 const config = require('./config');
 
 module.exports = {
+    entry: './src/main.js',
     module: {
         rules: [
             {
