@@ -42,7 +42,7 @@ module.exports = {
         ]
     },
     plugins: [
-        ...config.pages,
+        ...config.HtmlWebpackPlugin,
         new MiniCssExtractPlugin({
             filename: "[name].css",
             chunkFilename: "[id].css"
