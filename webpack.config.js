@@ -26,6 +26,18 @@ module.exports = {
                     "postcss-loader",
                     "sass-loader"
                 ]
+            },
+            {
+                test: /\.html$/,
+                use: [
+                    {
+                        loader: 'html-loader',
+                        options: {
+                            minimize: true,
+                            interpolate: true
+                        }
+                    }
+                ]
             }
         ]
     },
