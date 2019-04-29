@@ -4,9 +4,10 @@
   "description": "Webpack html/css start theme f5-studio",
   "main": "main.js",
   "scripts": {
-    "build": "webpack --mode=production",
-    "dev": "webpack --mode=development",
-    "serve": "webpack-dev-server --mode development --open"
+    "build": "clear webpack --mode=production",
+    "dev": "clear webpack --mode=development",
+    "serve": "webpack-dev-server --mode development --open",
+    "clear": "del-cli dist"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,7 @@
     "autoprefixer": "^9.5.1",
     "babel-loader": "^8.0.5",
     "css-loader": "^2.1.1",
+    "del-cli": "^1.1.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.6.0",
