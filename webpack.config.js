@@ -16,7 +16,10 @@ module.exports = {
     devtool: "source-map",
     resolve: {
         alias: {
-            "@": path.resolve(__dirname, './src'),
+            "@": path.resolve(__dirname, './src/'),
+            "js": path.resolve(__dirname, './src/assets/js'),
+            "public": path.resolve(__dirname, './src/assets/'),
+            "lib/js": path.resolve(__dirname, './src/assets/lib/js')
         }
     },
     module: {

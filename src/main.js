@@ -1,3 +1,3 @@
 import '@/assets/sass/main.scss';
 
-console.log('test js');
+require("js/index");
