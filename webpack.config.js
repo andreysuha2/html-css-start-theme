@@ -1,16 +1,22 @@
 const path = require('path');
 const config = require('./config');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const TerserJSPlugin = require('terser-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
     entry: './src/main.js',
     output: {
-        filename: "./js/bundle.js"
+        filename: "./js/bundle.js",
+    },
+    optimization: {
+        minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})]
     },
     devtool: "source-map",
     resolve: {
         alias: {
-            '@': path.resolve(__dirname, './src')
+            "@": path.resolve(__dirname, './src'),
         }
     },
     module: {
@@ -42,6 +48,21 @@ module.exports = {
                         }
                     }
                 ]
+            },
+            {
+                test: /\.(png|jpe?g|ico|svg)/i,
+                use: [
+                    {
+                        loader: "url-loader",
+                        options: {
+                            name: "./images/[hash].[ext]",
+                            limit: 10000
+                        }
+                    },
+                    {
+                        loader: "img-loader"
+                    }
+                ]
             }
         ]
     },
@@ -50,6 +71,10 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: "[name].css",
             chunkFilename: "[id].css"
-        })
+        }),
+        new CopyWebpackPlugin([
+            { from: './src/assets/fonts', to: './fonts' },
+            { from: './src/assets/icons', to: './icons' }
+        ])
     ]
 };
