@@ -1,10 +1,12 @@
+import dmlo from './dmlo';
+
 class DomManipulateLibrary {
     constructor() {
         return this.create;
     }
 
-    create(identificator) {
-        console.log(identificator);
+    create(selector) {
+        return new dmlo(selector);
     }
 }
 

@@ -1,4 +1,4 @@
-export const isDebug = process.env.NODE_ENV !== "production";
+export const isDev = process.env.NODE_ENV !== "production";
 
 class DevLogger {
     constructor() {
@@ -13,7 +13,7 @@ class DevLogger {
     }
 
     logInProduction() {
-        if(!isDebug) console.log(...arguments);
+        if(!isDev) console.log(...arguments);
     }
 
     notify() {
@@ -29,11 +29,11 @@ class DevLogger {
     }
 
     handler(handler) {
-        if (isDebug) handler();
+        if (isDev) handler();
     }
 
     log() {
-        if (isDebug) console.log(...arguments);
+        if (isDev) console.log(...arguments);
     }
 }
 export default new DevLogger();
