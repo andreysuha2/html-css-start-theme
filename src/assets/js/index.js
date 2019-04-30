@@ -1,6 +1,6 @@
 import dl from "lib/js/devLogger";
 
-dl.logInProduction('Run in "production" environment');
+dl.logInProduction('%cRun in "production" environment', "font-weight: bold");
 dl.notify("Welcome to F5-studio start theme!");
 dl.warning("Using jQuery is danger for your brain!");
 dl.error("Change git user name, user email, and repo!");
