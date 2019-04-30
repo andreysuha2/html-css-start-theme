@@ -1,6 +1,6 @@
 @import 'normalize-scss';
 @include normalize();
-@import "base";
+@import "_base";
 
 // components
 @import "components/header";

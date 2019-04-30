@@ -1,9 +1,11 @@
-import devLog from "lib/js/devLogger";
+import dl from "lib/js/devLogger";
+import dml from 'lib/js/dml';
+dml('test');
 
-devLog.logInProduction('Run in "production" environment');
-devLog.notify("Welcome to F5-studio start theme!");
-devLog.warning("Using jQuery is dagger for your brain!");
-devLog.error("Change git user name, user email, and repo!");
-devLog.handler(() => {
+dl.logInProduction('%cRun in "production" environment', "font-weight: bold");
+dl.notify("Welcome to F5-studio start theme!");
+dl.warning("Using jQuery is danger for your brain!");
+dl.error("Change git user name, user email, and repo!");
+dl.handler(() => {
     console.log('%cThis notifications show you who use DevLogger))', "font-size: 18px;font-weight: bold");
 });
