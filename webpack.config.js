@@ -66,6 +66,16 @@ module.exports = {
                         loader: "img-loader"
                     }
                 ]
+            },
+            {
+                test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        name: '[name].[ext]',
+                        outputPath: 'fonts/'
+                    }
+                }]
             }
         ]
     },
@@ -75,9 +85,6 @@ module.exports = {
             filename: "[name].css",
             chunkFilename: "[id].css"
         }),
-        new CopyWebpackPlugin([
-            { from: './src/assets/fonts', to: './fonts' },
-            { from: './src/assets/icons', to: './icons' }
-        ])
+        new CopyWebpackPlugin([{ from: './src/assets/icons', to: './icons' }])
     ]
 };

@@ -1,6 +1,11 @@
 @import 'normalize-scss';
 @include normalize();
+@import "_variables";
+@import "_typo";
+@import "_functions";
+@import "_mixins";
 @import "_base";
+
 
 // components
 @import "components/header";
