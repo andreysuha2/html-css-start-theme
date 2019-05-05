@@ -6,7 +6,7 @@
 Удалите папку .git в корне проекта и выполните в консоле команду 
 `git git remote add origin <repository name>` для добавления к проекту нового репозитория 
 При необходимости не забудьте изменить поле автор в файле _package.json_ и изментить
-_user name_ и _user email_ с помощью команд `git config user.name "<name>"`, `git config user.email <email>`
+_user name_ и _user email_ с помощью команд `git config user.name "<name>"`, `git config user.email <email>`. Так же следует выполнить команду `npm i` для установки зависсимостей.
 
 **Использование**
 
