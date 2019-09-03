@@ -20,8 +20,7 @@ module.exports = {
             "@": path.resolve(__dirname, './src/'),
             "js": path.resolve(__dirname, './src/assets/js'),
             "public": path.resolve(__dirname, './src/assets/'),
-            "lib/js": path.resolve(__dirname, './src/assets/lib/js'),
-            "jquery": path.resolve('node_modules/jquery/dist/jquery.js')
+            "lib/js": path.resolve(__dirname, './src/assets/lib/js')
         }
     },
     module: {
