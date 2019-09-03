@@ -21,6 +21,8 @@
   ],
   "dependencies": {
     "file-loader": "^3.0.1",
+    "jquery": "^1.12.4",
+    "jquery-nice-select": "^1.1.0",
     "normalize-scss": "^7.0.1"
   },
   "devDependencies": {
