@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
     entry: './src/main.js',
@@ -53,13 +54,16 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(png|jpe?g|ico|svg)/i,
+                test: /\.(png|jpe?g|svg|gif)/i,
+                exclude: [/fonts/],
                 use: [
                     {
                         loader: "url-loader",
                         options: {
-                            name: "./images/[hash].[ext]",
-                            limit: 10000
+                            name: "[name].[ext]",
+                            limit: 10000,
+                            outputPath: './images/',
+                            publicPath: '../images/'
                         }
                     },
                     {
@@ -69,11 +73,13 @@ module.exports = {
             },
             {
                 test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+                include: [/fonts/],
                 use: [{
                     loader: 'file-loader',
                     options: {
                         name: '[name].[ext]',
-                        outputPath: 'fonts/'
+                        outputPath: './fonts/',
+                        publicPath: '../fonts/'
                     }
                 }]
             }
@@ -81,6 +87,10 @@ module.exports = {
     },
     plugins: [
         ...config.HtmlWebpackPlugin,
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery'
+        }),
         new MiniCssExtractPlugin({
             filename: "[name].css",
             chunkFilename: "[id].css"
